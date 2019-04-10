@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.4.0
+cache : bundler
+install:
+- bundle install
+script: 
+- bundle exec jekyll build --safe -t
+branches:
+  only:
+  - master
+  - /^deploy-.*$/
+env:
+  global:
+     secure:2d26eb61b8278dc3c79a1dbacc69eb7f2a099ec6
